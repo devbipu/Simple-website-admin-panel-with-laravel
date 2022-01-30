@@ -1,0 +1,56 @@
+/* This is custom css*/
+
+.container{
+    max-width: 1268px;
+}
+
+
+/* Define classes */
+
+.secrow{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.secrow .secCol{
+    width: 50
+}
+
+
+
+
+
+/* banner */
+
+.banner_wrap{
+    background: url(/img/banner-bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive */
+
+@media(max-width: 767px){
+    .banner_wrap .row{
+        flex-direction: column-reverse;
+    }
+}
+
+
+
