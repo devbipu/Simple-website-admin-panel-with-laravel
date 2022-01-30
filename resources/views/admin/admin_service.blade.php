@@ -219,8 +219,8 @@
                     
                     if (response.status == 200) {
                         // show loader
-                        serviceLoader.addClass('d-none')
-                        serviceDataWraper.removeClass('d-none')
+                        serviceLoader.addClass('d-none');
+                        serviceDataWraper.removeClass('d-none');
 
                         // Inser data into font table form datatabase
                         $('#service').DataTable().destroy();

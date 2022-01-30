@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ContactController;
 
 
 
@@ -28,7 +29,7 @@ Route::get('/adminarea/service',function(){
     return view('admin.admin_service');
 });
 
-// Show all Service
+/*========== Service routs start ==========*/
 Route::get('/allservice', [ServiceController::class, 'serviceShow']);
 
 //Delete service by id
@@ -42,12 +43,10 @@ Route::post('/getservicedata', [ServiceController::class, 'getService']);
 
 // Add new service
 Route::post('/addnewservice', [ServiceController::class, 'addNewService']);
+/*========== Service routs start ==========*/
 
 
-
-/*=========================================
--------------- Courses routs --------------
-=========================================*/
+/*========== Courses routs start ==========*/
 
 Route::get('/adminarea/courses',function(){
     return view('admin.admin_courses');
@@ -68,3 +67,21 @@ Route::post('/update_course', [CoursesController::class, 'updateCourse']);
 
 // Add new course
 Route::post('/add_course', [CoursesController::class, 'addNewCourse']);
+
+/*========== Courses routs start ==========*/
+
+
+
+/*========== Courses routs start ==========*/
+//front page route
+Route::post('/contact_message', [HomeController::class, 'sendContactMessage']);
+//admin page route
+Route::get('/adminarea/contacts', function(){
+    return view('admin.admin_contacts');
+});
+
+// route for get data
+Route::get('/getallcontacts', [ContactController::class, 'getAllcontact']);
+
+// route for delete contacts
+Route::post('/deletecontact', [ContactController::class, 'deleteContactById']);

@@ -21,6 +21,11 @@
         Courses
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('/adminarea/contacts')}}">
+        Contacts
+      </a>
+    </li>
   </ul>
 
   {{-- 

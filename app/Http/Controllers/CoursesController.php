@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class CoursesController extends Controller
 {
     function allCourse(){
-        $dbRes = CoursesTable::get();
+        $dbRes = CoursesTable::orderBy('id', 'desc')->get();
         $data = json_encode($dbRes);
         return $data;
     }

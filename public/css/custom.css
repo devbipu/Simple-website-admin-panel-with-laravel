@@ -30,8 +30,16 @@
 }
 
 
+/* Contact wrap */
 
+.contact_wrap{
+    background: rgb(233, 233, 233);
+    padding: 100px 0px;
+}
 
+.contact_wrap .form-group{
+    padding: 10px 0px;
+}
 
 
 
