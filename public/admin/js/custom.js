@@ -16,6 +16,7 @@ function courseShow(){
             var courseData = response.data;
 
             if(response.status == 200){
+                $('#courses').DataTable().destroy();
                 $('#course_tbl').empty();
                 $.each(courseData, function(i,item){
                     $('<tr>').html(
@@ -49,6 +50,9 @@ function courseShow(){
                     $('#editCourse').modal('hide');
                     updateCourse(courseId)
                 })
+
+                $('#courses').DataTable();
+                $('.dataTables_length').addClass('bs-select');
             }
         })
         .catch(function(error) {

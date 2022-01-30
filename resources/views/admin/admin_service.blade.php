@@ -155,11 +155,6 @@
 
 @section('admin-js')
   <script>
-        $(document).ready( function () {
-            $('#service').DataTable();
-
-            
-        });
         /*===================================================
         --------declear axios function as helper start-------
         ===================================================*/
@@ -228,6 +223,7 @@
                         serviceDataWraper.removeClass('d-none')
 
                         // Inser data into font table form datatabase
+                        $('#service').DataTable().destroy();
                         $('#service_tbl').empty();
                         $.each(servData, function(i, item) {
 
@@ -264,6 +260,9 @@
 
                         })
 
+
+                        $('#service').DataTable();
+                        $('.dataTables_length').addClass('bs-select');
                     }
 
 

@@ -26,7 +26,7 @@
         <div class="add_btn my-3">
             <button id='courseAddBtn' class="btn btn-info">Add Course</button>
         </div>
-        <table id='service' class="table table-striped table-hover">
+        <table id='courses' class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th>Sl. NO</th>
