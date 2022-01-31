@@ -35,7 +35,7 @@
     </div>
 </div> --}}
 
-<div class="courses_wraper">
+<div class="courses_wraper" id="courses">
     <div class="container py-5">
       <h2 class="text-center display-3">My All Courses</h2>
       <div class="row justify-contnet-center">

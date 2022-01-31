@@ -1,6 +1,6 @@
 {{-- Home services sec --}}
 
-<div class="service_wraper">
+<div class="service_wraper" id="service">
   <div class="container py-5">
     <h2 class="text-center display-3">What I do</h2>
     <div class="row justify-contnet-center">

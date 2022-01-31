@@ -1,4 +1,4 @@
-<div class="contact_wrap">
+<div class="contact_wrap" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
