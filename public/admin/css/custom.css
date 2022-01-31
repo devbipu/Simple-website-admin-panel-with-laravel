@@ -1,3 +1,21 @@
 .tbl_icons i{
     font-size: 30px;
 }
+
+
+/* photo gallery */
+.preview_wrap img{
+    width: 100%;
+}
+
+img.galleryPhoto {
+    max-width: 100%;
+}
+
+.imgWraper {
+    border: 1px solid;
+    box-shadow: 1px 1px 10px #505050;
+    padding: 20px;
+    min-height: 142px;
+    margin: 10px 0px;
+}

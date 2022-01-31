@@ -151,7 +151,6 @@
 
         // Show all Course form db
         function courseShow(){
-            
             var url = '/getallcourses';
             axios.get(url)
                 .then(function(response) {
@@ -217,7 +216,7 @@
             let courseId = $(this).attr('course-id');
             $('#deleteCourseModal').modal('hide');
             deleteCourse(courseId);
-            courseShow()
+            courseShow();
         })
 
         // Show Delete data by id

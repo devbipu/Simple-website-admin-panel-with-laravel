@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PhotoGalleryController;
 
 
 
@@ -85,6 +86,27 @@ Route::get('/getallcontacts', [ContactController::class, 'getAllcontact'])->midd
 
 // route for delete contacts
 Route::post('/deletecontact', [ContactController::class, 'deleteContactById'])->middleware('adminLoginCheck');
+
+
+
+
+
+/*========== Photo Gallery routs start ==========*/
+// Photo gallery 
+Route::get('/adminarea/allphotos', [PhotoGalleryController::class, 'photoGalleryPage'])->middleware('adminLoginCheck');
+
+Route::post('/uploadphoto', [PhotoGalleryController::class, 'uploadPhoto']);
+
+Route::get('/getallphotourl', [PhotoGalleryController::class, 'allPhotoUrl']);
+
+// get photo by id
+Route::get('/getphotourlbyid/{id}', [PhotoGalleryController::class, 'getPhotoUrlById']);
+
+// delete photo by id
+Route::post('/deletegalleryphoto', [PhotoGalleryController::class, 'deletePhotoById']);
+
+
+
 
 
 
