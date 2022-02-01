@@ -26,7 +26,7 @@
                       
                     </div> 
                     <div class="form-group">
-                        <input type="submit" class="form-control btn btn-primary" value="Send to me" id="messageSend" >
+                        <button type="submit" class="form-control btn btn-primary" value="Send Message" id="messageSend" >Send Message</button>
                     </div>
                 </div>
             </div>

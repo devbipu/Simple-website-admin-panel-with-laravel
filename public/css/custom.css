@@ -42,9 +42,17 @@
 }
 
 
+/* Nevbar */
+div#navbarNav {
+    justify-content: space-between;
+}
 
-
-
+.social_sec a {
+    margin: 0px 4px;
+}
+.social_sec a i {
+    font-size: 24px;
+}
 
 
 

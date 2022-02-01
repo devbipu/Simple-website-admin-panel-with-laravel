@@ -1,3 +1,25 @@
+function currentMenuItem(pagename){
+    $('body').addClass(pagename);
+    var menuText = $('.navItemsWrapper li');
+    //console.log(menuText.length);
+    var menuItems = []
+    $.each(menuText,function(i){
+        menuItems.push(menuText[i].innerText.toLowerCase())
+    })
+
+    var bodyCalass = $('body').attr('class');
+    var current = menuItems.indexOf(bodyCalass)
+    if(menuItems[current] == bodyCalass){
+        console.log(menuItems[current]);
+        $('.navItemsWrapper li a').removeClass('active');
+        $('.navItemsWrapper li:nth-child('+ ( current+1 )+') a').addClass('active');
+    }else{
+        console.log(menuItems[current])
+    }
+}
+
+
+    
     /** form clear method **/  
     function clearPhotoForms(form, element){
         $(form + ' input').val('');

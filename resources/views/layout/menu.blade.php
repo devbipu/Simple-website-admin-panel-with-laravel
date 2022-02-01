@@ -22,6 +22,14 @@
           <a class="nav-link" href="{{url('/adminarea')}}">Admin panel</a>
         </li>
       </ul>
+      <div class="social_sec">
+        <a href="https://facebook.com/devbipu" target="blank">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://github.com/devbipu" target="blank">
+          <i class="bi bi-github"></i>
+        </a>
+      </div>
     </div>
   </div>
 </nav>

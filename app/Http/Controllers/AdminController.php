@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\VisitorIpModel;
 use App\Models\ServiceTable;
 use App\Models\AdminInfoTable;
+use App\Models\CoursesTable;
+use App\Models\PhotoTable;
+use App\Models\ContactTable;
 use Illuminate\Support\Facades\DB;
 
 
@@ -38,5 +41,24 @@ class AdminController extends Controller
     function logout(Request $req){
         $req->session()->flush();
         return redirect('/login');
+    }
+
+
+    //Dashboard controller
+    
+    function getSummery(){
+        $course = CoursesTable::count();
+        $service = ServiceTable::count();
+        $contact = ContactTable::count();
+        $photo = PhotoTable::count();
+        $visitor = VisitorIpModel::count();
+
+        return view('admin.dashboard',[
+            "totalCourse" => $course,
+            "totalService" => $service,
+            "totalContact" => $contact,
+            "totalPhoto" => $photo,
+            "totalVisitor" => $visitor,
+        ]);
     }
 }

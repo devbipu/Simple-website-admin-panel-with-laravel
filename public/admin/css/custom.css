@@ -19,3 +19,13 @@ img.galleryPhoto {
     min-height: 142px;
     margin: 10px 0px;
 }
+
+
+/* Dashboard */
+.col-md-2.summary_wrapper {
+    border: 1px solid;
+    margin: 10px;
+    text-align: center;
+    padding: 20px 0px;
+    box-shadow: 0 0 10px #000000ad;
+}

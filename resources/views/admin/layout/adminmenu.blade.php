@@ -1,6 +1,6 @@
 
 <div class="sidebar-sticky pt-3">
-  <ul class="nav flex-column">
+  <ul class="nav flex-column navItemsWrapper">
     <li class="nav-item">
       <a class="nav-link active" href="{{url('/adminarea')}}">
         Dashboard
@@ -13,7 +13,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{{url('/adminarea/service')}}">
-        Service
+        Services
       </a>
     </li>
     <li class="nav-item">

@@ -19,9 +19,7 @@ Route::get('/', [HomeController::class, 'siteVisitorTracking']);
 
 //========= admin routs ==========//
 
-Route::get('/adminarea', function(){
-    return view('admin.dashboard');
-})->middleware('adminLoginCheck');
+Route::get('/adminarea', [AdminController::class, 'getSummery'])->middleware('adminLoginCheck');
 
 Route::get('/adminarea/visitor', [AdminController::class,'visitorShow'])->middleware('adminLoginCheck');
 

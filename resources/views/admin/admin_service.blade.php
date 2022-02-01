@@ -7,16 +7,6 @@
 @section('adminBodyContent')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Service</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group mr-2">
-                <button type="button" onclick="" class="btn btn-sm btn-outline-secondary">Delete</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-            </div>
-            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
-            </button>
-        </div>
     </div> <!--header title end-->
     
 
@@ -160,32 +150,6 @@
         ===================================================*/
 
 
-        function axiosGetCall(url) {
-            /* It take url as paramiter and return axios response */
-            var axiosRet = {};
-            axios.get(url)
-                .then(function(response) {
-                    axiosRet = response;
-                })
-                .catch(function(error) {
-                    axiosRet = error;
-                })
-            console.log(axiosRet);
-        }
-
-        function axiosPostCall(url, data) {
-            /* It take 2 paramiter 1st url and secon json data and return axios response */
-            var mydata = {};
-            axios.post(url, data)
-                .then(function(response) {
-                    mydata = response;
-                })
-                .catch(function(error) {
-                    return error;
-                })
-            return mydata;
-        }
-
         // form clear method
         function clearForms(form){
             $('#'+form+' input').val('')
@@ -193,19 +157,18 @@
 
         // button reset
         function btnReset(txt){
-            // var btnReset = $('#deleteOk').html(txt);
-            // return btnReset;
             return $('#deleteOk').html(txt);
         }
-
         let animation = "<div class='spinner-border' role='status'><span class='sr-only'>Loading...<pan></div>";
         /*===================================================
         -------declear axios function as helper end---------
         ===================================================*/
 
+        //make menu active
 
 
-
+        currentMenuItem('services')
+        
         // Show service data
         function serviceData() {
             var serviceLoader = $('.loader');
