@@ -23,10 +23,10 @@ Route::get('/adminarea', [AdminController::class, 'getSummery'])->middleware('ad
 
 Route::get('/adminarea/visitor', [AdminController::class,'visitorShow'])->middleware('adminLoginCheck');
 
-
 Route::get('/adminarea/service',function(){
     return view('admin.admin_service');
 })->middleware('adminLoginCheck');
+
 
 /*========== Service routs start ==========*/
 Route::get('/allservice', [ServiceController::class, 'serviceShow'])->middleware('adminLoginCheck');
@@ -42,7 +42,14 @@ Route::post('/getservicedata', [ServiceController::class, 'getService'])->middle
 
 // Add new service
 Route::post('/addnewservice', [ServiceController::class, 'addNewService'])->middleware('adminLoginCheck');
-/*========== Service routs start ==========*/
+
+//get single page
+Route::get('/singleservice/{id}', [ServiceController::class, 'serviceSingle'])->name("service-four");
+
+/*========== Service routs end ==========*/
+
+
+
 
 
 /*========== Courses routs start ==========*/
@@ -51,9 +58,7 @@ Route::get('/adminarea/courses',function(){
     return view('admin.admin_courses');
 })->middleware('adminLoginCheck');
 
-
 Route::get('/getallcourses', [CoursesController::class, 'allCourse'])->middleware('adminLoginCheck');
-
 
 // delete course
 Route::post('/delete_course', [CoursesController::class, 'deleteCourse'])->middleware('adminLoginCheck');
@@ -109,13 +114,15 @@ Route::post('/deletegalleryphoto', [PhotoGalleryController::class, 'deletePhotoB
 
 
 // Login route
-
 Route::get('/login', function(){
     return view('login');
 });
-
 Route::post('/adminlogin', [AdminController::class, 'login']);
 
-// log out route
 
+// log out route
 Route::get('/adminarea/logout', [AdminController::class, 'logout']);
+
+
+// search query 
+Route::post('/searchservice', [ServiceController::class, 'onSearch']);

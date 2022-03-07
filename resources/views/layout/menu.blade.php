@@ -23,12 +23,13 @@
         </li>
       </ul>
       <div class="social_sec">
-        <a href="https://facebook.com/devbipu" target="blank">
+        {{-- <a href="https://facebook.com/devbipu" target="blank">
           <i class="bi bi-facebook"></i>
         </a>
         <a href="https://github.com/devbipu" target="blank">
           <i class="bi bi-github"></i>
-        </a>
+        </a> --}}
+        @include('components.searchform')
       </div>
     </div>
   </div>

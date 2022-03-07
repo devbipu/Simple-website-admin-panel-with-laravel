@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\ServiceTable;
 use Illuminate\Support\Facades\DB;
 
+use App\Models\CoursesTable;
+
 class ServiceController extends Controller
 {
      //all service show
@@ -70,5 +72,38 @@ class ServiceController extends Controller
         }else{
             return 'Add service faild';
         }
+    }
+
+
+
+    // on search
+
+    function onSearch(Request $req){
+        $searchTxt = $req->input('data');
+
+        if(!empty($searchTxt)){
+            $getTheData = ServiceTable::where('title', 'LIKE', "%$searchTxt%" )->get();
+            $data = json_encode($getTheData);
+            return $data;
+        }else{
+            return redirect("/");
+        }
+
+    }
+
+
+
+    // service signle page
+    function serviceSingle($id){
+        $getTheData = ServiceTable::where('id', "$id")->first();
+        // $data = json_encode($getTheData);
+       if(!empty($getTheData)){
+            return view("service_single", [
+                "data" => $getTheData ?? "No data found",
+            ]);
+       }
+       else{
+           return redirect("/");
+       }
     }
 }

@@ -24,15 +24,31 @@
 
 @section('front-script')
     <script>
-        // $('#messageSend').click(function(){
-        //     var name = $('#name');
-        //     var email = $('#email');
-        //     var phone = $('#phone');
-        //     var message = $('#message').val();
-        //     alert(name + email + phone + message)
-        //     //contactMessage(name,email,phone,message)
-        // })
 
+      $('.searchInp').keyup(function(){
+        var datas = $(this).val();
+        if(datas != ""){
+          onsearch(datas);
+          $(".searchRes").addClass('showResultDiv')
+        }else{
+          $('#searchResList').empty();
+          $(".searchRes").removeClass('showResultDiv')
+          console.log("Please input data")
+        }
+      })
+      function onsearch(data){
+        axios.post('/searchservice', {data: data})
+        .then(function(response){
+          if(response.status == 200){
+              var da = response.data;
+              $('#searchResList').empty();
+            $.each(da,function(i){
+              $('#searchResList').append("<li>"+ da[i].title +"</li>");
+                console.log(da[i].title);
+            })
+          }
+        })
+      }
 
 
     </script>

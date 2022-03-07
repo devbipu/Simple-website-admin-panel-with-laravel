@@ -12,7 +12,7 @@
               <div class="card-body">
                 <h5 class="card-title">{{$Sdata->title}}</h5>
                 <p class="card-text">{{$Sdata->description}}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="singleservice/{{$Sdata->id}}" class="btn btn-primary">Read more</a>
               </div>
             </div>
           </div>
